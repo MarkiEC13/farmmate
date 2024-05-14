@@ -69,8 +69,8 @@ public class FarmHttpTriggerTests
         var existingFarm = new FakerFarm().Generate(1).First();
         var farm = new List<Farm> { existingFarm }.AsReadOnly();
 
-        var updatedHospital = new FakerFarm(existingFarm.Id).Generate(1).First();
-        var json = JsonConvert.SerializeObject(updatedHospital);
+        var updatedFarm = new FakerFarm(existingFarm.Id).Generate(1).First();
+        var json = JsonConvert.SerializeObject(updatedFarm);
         var request = FakeHttpRequestDataExtensions.GetRequestData(json, "post", null, _functionContext);
 
         // Act
@@ -78,11 +78,11 @@ public class FarmHttpTriggerTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(existingFarm.Crop, result.Crop);
-        Assert.Equal(existingFarm.Location, result.Location);
-        Assert.Equal(existingFarm.Budget, result.Budget);
-        Assert.NotEqual(existingFarm.Id, result.Id);
-        Assert.Equal(existingFarm.CreatedDateTime, result.CreatedDateTime);
+        Assert.Equal(updatedFarm.Crop, result.Crop);
+        Assert.Equal(updatedFarm.Location, result.Location);
+        Assert.Equal(updatedFarm.Budget, result.Budget);
+        Assert.NotEqual(updatedFarm.Id, result.Id);
+        Assert.Equal(updatedFarm.CreatedDateTime, result.CreatedDateTime);
         Assert.True((DateTime.UtcNow - result.UpdatedDateTime).TotalSeconds < 5);
     }
     
@@ -93,25 +93,39 @@ public class FarmHttpTriggerTests
         var request = FakeHttpRequestDataExtensions.GetRequestData("{}", "post", null, _functionContext);
 
         var existingFarm = new FakerFarm().Generate(1).First();
-        var hospitals = new List<Farm> { existingFarm }.AsReadOnly();
+        var farms = new List<Farm> { existingFarm }.AsReadOnly();
         var id = Guid.NewGuid();
 
         // Act & Assert
-        await Assert.ThrowsAsync<BadRequestException>(() => FarmHttpTrigger.UpdateFarm(request, id, hospitals));
+        await Assert.ThrowsAsync<BadRequestException>(() => FarmHttpTrigger.UpdateFarm(request, id, farms));
     }
     
     [Fact]
     public async Task UpdateFarm_ThrowsNotFoundException_WhenFarmDoesNotExist()
     {
         // Arrange
-        var hospital = new FakerFarm().Generate(1).First();
-        var json = JsonConvert.SerializeObject(hospital);
+        var farm = new FakerFarm().Generate(1).First();
+        var json = JsonConvert.SerializeObject(farm);
         var request = FakeHttpRequestDataExtensions.GetRequestData(json, "post", null, _functionContext);
 
-        var hospitals = new List<Farm>().AsReadOnly();
+        var farms = new List<Farm>().AsReadOnly();
         var id = Guid.NewGuid();
 
         // Act & Assert
-        await Assert.ThrowsAsync<NotFoundException>(() => FarmHttpTrigger.UpdateFarm(request, id, hospitals));
+        await Assert.ThrowsAsync<NotFoundException>(() => FarmHttpTrigger.UpdateFarm(request, id, farms));
+    }
+    
+    [Fact]
+    public void GetFarms_ReturnsFarm_WhenFarmsExist()
+    {
+        // Arrange
+        var farms = new FakerFarm().Generate(2);
+
+        // Act
+        var result = FarmHttpTrigger.GetFarmsByUserId(_request, farms.AsReadOnly());
+
+        // Assert
+        Assert.Equal(2, result.Count);
+        Assert.Equal(farms, result);
     }
 }
