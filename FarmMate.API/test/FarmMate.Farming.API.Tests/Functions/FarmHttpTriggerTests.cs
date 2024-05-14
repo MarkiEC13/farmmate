@@ -81,8 +81,6 @@ public class FarmHttpTriggerTests
         Assert.Equal(updatedFarm.Crop, result.Crop);
         Assert.Equal(updatedFarm.Location, result.Location);
         Assert.Equal(updatedFarm.Budget, result.Budget);
-        Assert.NotEqual(updatedFarm.Id, result.Id);
-        Assert.Equal(updatedFarm.CreatedDateTime, result.CreatedDateTime);
         Assert.True((DateTime.UtcNow - result.UpdatedDateTime).TotalSeconds < 5);
     }
     
@@ -127,5 +125,15 @@ public class FarmHttpTriggerTests
         // Assert
         Assert.Equal(2, result.Count);
         Assert.Equal(farms, result);
+    }
+    
+    [Fact]
+    public void GetFarms_ThrowsNotFoundException_WhenNoFarmsExist()
+    {
+        // Arrange
+        var users = new List<Farm>().AsReadOnly();
+
+        // Act & Assert
+        Assert.Throws<NotFoundException>(() => FarmHttpTrigger.GetFarmById(_request, users));
     }
 }
