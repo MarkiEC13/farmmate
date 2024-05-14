@@ -5,7 +5,7 @@ namespace TestProject1.Fakers;
 
 public sealed class FakerFarm : Faker<Farm>
 {
-    private FakerFarm(Guid id) {
+    public FakerFarm(Guid id) {
         RuleFor(o => o.Id, id);
         RuleFor(o => o.UserId, f => f.Random.Guid().ToString());
         RuleFor(o => o.Location, f => f.Address.City());
