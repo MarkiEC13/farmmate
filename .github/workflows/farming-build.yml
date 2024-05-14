@@ -1,4 +1,4 @@
-name: 🤖 Build hospitals function
+name: 🤖 Build farming function
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    uses: FarmMate/.github/workflows/build.yml@main
+    uses: MarkiEC13/FarmMate/.github/workflows/build.yml@main
     with:
       dotnet-version: 78.0.4
       source-file-path: src/FarmMate.Farming.API/FarmMate.Farming.API.csproj
