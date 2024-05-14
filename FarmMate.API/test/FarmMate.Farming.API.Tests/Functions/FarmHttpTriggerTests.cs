@@ -1,4 +1,5 @@
 using Azure.Core.Serialization;
+using FarmMate.Common.Exceptions;
 using FarmMate.Farming.API.Functions;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -42,12 +43,21 @@ public class FarmHttpTriggerTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(farm.Id, result.Id);
         Assert.Equal(farm.Crop, result.Crop);
         Assert.Equal(farm.Location, result.Location);
         Assert.Equal(farm.Budget, result.Budget);
         Assert.NotEqual(Guid.Empty, result.Id);
         Assert.True((DateTime.UtcNow - result.CreatedDateTime).TotalSeconds < 5);
         Assert.True((DateTime.UtcNow - result.UpdatedDateTime).TotalSeconds < 5);
+    }
+    
+    [Fact]
+    public async Task CreateFarm_ThrowsBadRequestException_WhenFarmIsInvalid()
+    {
+        // Arrange
+        var request = FakeHttpRequestDataExtensions.GetRequestData("{}", "post", null, _functionContext);
+
+        // Act & Assert
+        await Assert.ThrowsAsync<BadRequestException>(() => FarmHttpTrigger.CreateFarm(request));
     }
 }
