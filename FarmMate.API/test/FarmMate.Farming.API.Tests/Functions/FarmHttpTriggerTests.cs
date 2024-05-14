@@ -136,4 +136,29 @@ public class FarmHttpTriggerTests
         // Act & Assert
         Assert.Throws<NotFoundException>(() => FarmHttpTrigger.GetFarmById(_request, users));
     }
+    
+    [Fact]
+    public void GetFarmById_ReturnsFarm_WhenFarmExists()
+    {
+        // Arrange
+        var farm = new FakerFarm().Generate(1).First();
+        var farms = new List<Farm> { farm }.AsReadOnly();
+
+        // Act
+        var result = FarmHttpTrigger.GetFarmById(_request, farms);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(farm, result);
+    }
+
+    [Fact]
+    public void GetFarmById_ThrowsNotFoundException_WhenFarmDoesNotExist()
+    {
+        // Arrange
+        var farm = new List<Farm>().AsReadOnly();
+
+        // Act & Assert
+        Assert.Throws<NotFoundException>(() => FarmHttpTrigger.GetFarmById(_request, farm));
+    }
 }
