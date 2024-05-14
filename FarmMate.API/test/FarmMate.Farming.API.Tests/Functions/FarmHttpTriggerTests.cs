@@ -87,7 +87,7 @@ public class FarmHttpTriggerTests
     }
     
     [Fact]
-    public async Task UpdateHospital_ThrowsBadRequestException_WhenHospitalIsInvalid()
+    public async Task UpdateFarm_ThrowsBadRequestException_WhenFarmIsInvalid()
     {
         // Arrange
         var request = FakeHttpRequestDataExtensions.GetRequestData("{}", "post", null, _functionContext);
@@ -98,5 +98,20 @@ public class FarmHttpTriggerTests
 
         // Act & Assert
         await Assert.ThrowsAsync<BadRequestException>(() => FarmHttpTrigger.UpdateFarm(request, id, hospitals));
+    }
+    
+    [Fact]
+    public async Task UpdateFarm_ThrowsNotFoundException_WhenFarmDoesNotExist()
+    {
+        // Arrange
+        var hospital = new FakerFarm().Generate(1).First();
+        var json = JsonConvert.SerializeObject(hospital);
+        var request = FakeHttpRequestDataExtensions.GetRequestData(json, "post", null, _functionContext);
+
+        var hospitals = new List<Farm>().AsReadOnly();
+        var id = Guid.NewGuid();
+
+        // Act & Assert
+        await Assert.ThrowsAsync<NotFoundException>(() => FarmHttpTrigger.UpdateFarm(request, id, hospitals));
     }
 }
