@@ -1,0 +1,14 @@
+name: 🤖 Build hospitals function
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: FarmMate/.github/workflows/build.yml@main
+    with:
+      dotnet-version: 78.0.4
+      source-file-path: src/FarmMate.Farming.API/FarmMate.Farming.API.csproj
+      tests-file-path: test/FarmMate.Farming.API.Tests/FarmMate.Farming.API.Tests.csproj

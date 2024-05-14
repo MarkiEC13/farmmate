@@ -1,0 +1,46 @@
+name: 🚀 Deploy
+
+on:
+  workflow_call:
+    inputs:
+      dotnet-version:
+        required: true
+        type: string
+      service-name:
+        required: true
+        type: string
+      source-file-path:
+        required: true
+        type: string
+      output-pkg-path:
+        required: true
+        type: string
+    secrets:
+      publish-profile:
+        required: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Checkout GitHub action'
+      uses: actions/checkout@v3
+
+    - name: Setup DotNet ${{ inputs.dotnet-version }} Environment
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ inputs.dotnet-version }}
+
+    - name: 'Resolve Project Dependencies Using Dotnet'
+      shell: bash
+      run: |
+        pushd .
+        dotnet build ${{ inputs.source-file-path }} --configuration Release --output ./${{ inputs.output-pkg-path }}/output
+        popd
+    
+    - name: 'Run Azure Functions action'
+      uses: Azure/functions-action@v1
+      with:
+        app-name: ${{ inputs.service-name }}
+        package: ${{ inputs.output-pkg-path }}/output
+        publish-profile: ${{ secrets.publish-profile }}

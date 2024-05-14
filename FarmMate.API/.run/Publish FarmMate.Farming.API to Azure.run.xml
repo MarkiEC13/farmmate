@@ -1,0 +1,128 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish FarmMate.Farming.API to Azure" type="AzureFunctionAppPublish" factoryName="Azure Function App">
+    <option name="AZURE_FUNCTION_APP_PROJECT" value="$PROJECT_DIR$/FarmMate.Farming.API/FarmMate.Farming.API.csproj" />
+    <option name="AZURE_FUNCTION_APP_CONFIGURATION" value="Release" />
+    <option name="AZURE_FUNCTION_APP_PLATFORM" value="Any CPU" />
+    <option name="AZURE_FUNCTION_APP_SUBSCRIPTION_ID" value="542bdd77-31a4-42f8-b323-3dcf2693ead4" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_APP" value="0" />
+    <option name="AZURE_FUNCTION_APP_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Web/sites/farmmate-farming-api" />
+    <option name="AZURE_FUNCTION_APP_NAME" value="functionapp-240507223931" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_RESOURCE_GROUP" value="0" />
+    <option name="AZURE_FUNCTION_APP_RESOURCE_GROUP_NAME" value="DefaultResourceGroup-WEU" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_APP_SERVICE_PLAN" value="0" />
+    <option name="AZURE_FUNCTION_APP_SERVICE_PLAN_ID" value="" />
+    <option name="AZURE_FUNCTION_APP_SERVICE_PLAN_NAME" value="appsp-240507223931" />
+    <option name="AZURE_FUNCTION_APP_LOCATION" value="eastus" />
+    <option name="AZURE_FUNCTION_APP_PRICING_TIER" value="" />
+    <option name="AZURE_FUNCTION_APP_OPERATING_SYSTEM" value="LINUX" />
+    <option name="AZURE_FUNCTION_APP_RUNTIME" value="DOTNET-ISOLATED" />
+    <option name="AZURE_FUNCTION_APP_RUNTIMEVERSION" value="~4" />
+    <option name="AZURE_FUNCTION_APP_FXVERSION" value="DOTNET-ISOLATED|8.0" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_STORAGE_ACCOUNT" value="0" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Storage/storageAccounts/farmmate9526671291" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_NAME" value="bq6p" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_TYPE" value="Standard_LRS" />
+    <option name="AZURE_FUNCTION_APP_IS_DEPLOY_TO_SLOT" value="0" />
+    <option name="AZURE_FUNCTION_APP_SLOT_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_OPEN_BROWSER_PUBLISH" value="0" />
+    <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="542bdd77-31a4-42f8-b323-3dcf2693ead4" />
+    <option name="AZURE_SQL_DATABASE_IS_ENABLED" value="0" />
+    <option name="AZURE_SQL_DATABASE_CONNECTION_STRING_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE" value="0" />
+    <option name="AZURE_SQL_DATABASE_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Sql/servers/farmmate/databases/farmmate" />
+    <option name="AZURE_SQL_DATABASE_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE_RESOURCE_GROUP" value="0" />
+    <option name="AZURE_SQL_DATABASE_RESOURCE_GROUP_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE_SQL_SERVER" value="0" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_ID" value="" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_ADMIN_LOGIN" value="farmmate" />
+    <option name="AZURE_SQL_DATABASE_LOCATION" value="eastus" />
+    <option name="AZURE_SQL_DATABASE_COLLATION" value="SQL_Latin1_General_CP1_CI_AS" />
+    <method v="2" />
+  </configuration>
+  <configuration default="false" name="Publish FarmMate.Farming.API to Azure" type="AzureFunctionAppPublish" factoryName="Azure Function App">
+    <option name="AZURE_FUNCTION_APP_PROJECT" value="$PROJECT_DIR$/FarmMate.Farming.API/FarmMate.Farming.API.csproj" />
+    <option name="AZURE_FUNCTION_APP_CONFIGURATION" value="Release" />
+    <option name="AZURE_FUNCTION_APP_PLATFORM" value="Any CPU" />
+    <option name="AZURE_FUNCTION_APP_SUBSCRIPTION_ID" value="542bdd77-31a4-42f8-b323-3dcf2693ead4" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_APP" value="0" />
+    <option name="AZURE_FUNCTION_APP_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Web/sites/farmmate-farming-api" />
+    <option name="AZURE_FUNCTION_APP_NAME" value="functionapp-240507224423" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_RESOURCE_GROUP" value="0" />
+    <option name="AZURE_FUNCTION_APP_RESOURCE_GROUP_NAME" value="DefaultResourceGroup-WEU" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_APP_SERVICE_PLAN" value="0" />
+    <option name="AZURE_FUNCTION_APP_SERVICE_PLAN_ID" value="" />
+    <option name="AZURE_FUNCTION_APP_SERVICE_PLAN_NAME" value="appsp-240507224423" />
+    <option name="AZURE_FUNCTION_APP_LOCATION" value="eastus" />
+    <option name="AZURE_FUNCTION_APP_PRICING_TIER" value="" />
+    <option name="AZURE_FUNCTION_APP_OPERATING_SYSTEM" value="LINUX" />
+    <option name="AZURE_FUNCTION_APP_RUNTIME" value="DOTNET-ISOLATED" />
+    <option name="AZURE_FUNCTION_APP_RUNTIMEVERSION" value="~4" />
+    <option name="AZURE_FUNCTION_APP_FXVERSION" value="DOTNET-ISOLATED|8.0" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_STORAGE_ACCOUNT" value="0" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Storage/storageAccounts/farmmate9526671291" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_NAME" value="9ajw" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_TYPE" value="Standard_LRS" />
+    <option name="AZURE_FUNCTION_APP_IS_DEPLOY_TO_SLOT" value="0" />
+    <option name="AZURE_FUNCTION_APP_SLOT_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_OPEN_BROWSER_PUBLISH" value="0" />
+    <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="542bdd77-31a4-42f8-b323-3dcf2693ead4" />
+    <option name="AZURE_SQL_DATABASE_IS_ENABLED" value="0" />
+    <option name="AZURE_SQL_DATABASE_CONNECTION_STRING_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE" value="0" />
+    <option name="AZURE_SQL_DATABASE_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Sql/servers/farmmate/databases/farmmate" />
+    <option name="AZURE_SQL_DATABASE_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE_RESOURCE_GROUP" value="0" />
+    <option name="AZURE_SQL_DATABASE_RESOURCE_GROUP_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE_SQL_SERVER" value="0" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_ID" value="" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_ADMIN_LOGIN" value="farmmate" />
+    <option name="AZURE_SQL_DATABASE_LOCATION" value="eastus" />
+    <option name="AZURE_SQL_DATABASE_COLLATION" value="SQL_Latin1_General_CP1_CI_AS" />
+    <method v="2" />
+  </configuration>
+  <configuration default="false" name="Publish FarmMate.Farming.API to Azure" type="AzureFunctionAppPublish" factoryName="Azure Function App">
+    <option name="AZURE_FUNCTION_APP_PROJECT" value="$PROJECT_DIR$/FarmMate.Farming.API/FarmMate.Farming.API.csproj" />
+    <option name="AZURE_FUNCTION_APP_CONFIGURATION" value="Release" />
+    <option name="AZURE_FUNCTION_APP_PLATFORM" value="Any CPU" />
+    <option name="AZURE_FUNCTION_APP_SUBSCRIPTION_ID" value="542bdd77-31a4-42f8-b323-3dcf2693ead4" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_APP" value="0" />
+    <option name="AZURE_FUNCTION_APP_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Web/sites/farmmate-farming-api" />
+    <option name="AZURE_FUNCTION_APP_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_RESOURCE_GROUP" value="0" />
+    <option name="AZURE_FUNCTION_APP_RESOURCE_GROUP_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_APP_SERVICE_PLAN" value="0" />
+    <option name="AZURE_FUNCTION_APP_SERVICE_PLAN_ID" value="" />
+    <option name="AZURE_FUNCTION_APP_SERVICE_PLAN_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_LOCATION" value="eastus" />
+    <option name="AZURE_FUNCTION_APP_PRICING_TIER" value="" />
+    <option name="AZURE_FUNCTION_APP_OPERATING_SYSTEM" value="LINUX" />
+    <option name="AZURE_FUNCTION_APP_RUNTIME" value="DOTNET-ISOLATED" />
+    <option name="AZURE_FUNCTION_APP_RUNTIMEVERSION" value="~4" />
+    <option name="AZURE_FUNCTION_APP_FXVERSION" value="DOTNET-ISOLATED|8.0" />
+    <option name="AZURE_FUNCTION_APP_IS_CREATE_STORAGE_ACCOUNT" value="0" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Storage/storageAccounts/farmmate9526671291" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_STORAGE_ACCOUNT_TYPE" value="Standard_LRS" />
+    <option name="AZURE_FUNCTION_APP_IS_DEPLOY_TO_SLOT" value="0" />
+    <option name="AZURE_FUNCTION_APP_SLOT_NAME" value="" />
+    <option name="AZURE_FUNCTION_APP_OPEN_BROWSER_PUBLISH" value="0" />
+    <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="542bdd77-31a4-42f8-b323-3dcf2693ead4" />
+    <option name="AZURE_SQL_DATABASE_IS_ENABLED" value="0" />
+    <option name="AZURE_SQL_DATABASE_CONNECTION_STRING_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE" value="0" />
+    <option name="AZURE_SQL_DATABASE_ID" value="/subscriptions/542bdd77-31a4-42f8-b323-3dcf2693ead4/resourceGroups/farmmate/providers/Microsoft.Sql/servers/farmmate/databases/farmmate" />
+    <option name="AZURE_SQL_DATABASE_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE_RESOURCE_GROUP" value="0" />
+    <option name="AZURE_SQL_DATABASE_RESOURCE_GROUP_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_IS_CREATE_SQL_SERVER" value="0" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_ID" value="" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_NAME" value="" />
+    <option name="AZURE_SQL_DATABASE_SQL_SERVER_ADMIN_LOGIN" value="farmmate" />
+    <option name="AZURE_SQL_DATABASE_LOCATION" value="eastus" />
+    <option name="AZURE_SQL_DATABASE_COLLATION" value="SQL_Latin1_General_CP1_CI_AS" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,59 @@
+name: 🤖 Build
+
+on:
+  workflow_call:
+    inputs:
+      dotnet-version:
+        required: true
+        type: string
+      source-file-path:
+        required: true
+        type: string
+      tests-file-path:
+        required: true
+        type: string
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout GitHub action'
+        uses: actions/checkout@v3
+
+      - name: Setup dotnet ${{ inputs.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ inputs.dotnet-version }}
+          
+      - name: Display dotnet version
+        run: dotnet --version
+
+      - name: Restore dependencies
+        run: dotnet restore ${{ inputs.source-file-name }}
+
+      - name: Build
+        run: dotnet build ${{ inputs.source-file-name }} --no-restore
+
+      - name: Test with coverage report
+        run: dotnet test ${{ inputs.tests-file-name }} --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./users/coverage --settings testrunsettings.xml
+
+      - name: Code Coverage Summary
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: users/coverage/**/coverage.cobertura.xml
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '80 80'
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request' && contains(inputs.source-file-path, 'users' )
+        with:
+          recreate: true
+          path: code-coverage-results.md

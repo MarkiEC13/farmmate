@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmMate.Farming.API", "src\FarmMate.Farming.API\FarmMate.Farming.API.csproj", "{939FFED3-2861-486A-9827-C95CCA875AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmMate.Common", "src\FarmMate.Common\FarmMate.Common.csproj", "{A74838FA-FE84-4D40-81A7-84E1969F9FA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmMate.CropRecommendation.API", "src\FarmMate.CropRecommendation.API\FarmMate.CropRecommendation.API.csproj", "{6BC4105B-7AD3-41C2-B040-F3AAC97A26A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmMate.Farming.API.Tests", "test\FarmMate.Farming.API.Tests\FarmMate.Farming.API.Tests.csproj", "{FEED8364-D194-4D07-9BDF-08EB08056B57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{939FFED3-2861-486A-9827-C95CCA875AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{939FFED3-2861-486A-9827-C95CCA875AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{939FFED3-2861-486A-9827-C95CCA875AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{939FFED3-2861-486A-9827-C95CCA875AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74838FA-FE84-4D40-81A7-84E1969F9FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74838FA-FE84-4D40-81A7-84E1969F9FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74838FA-FE84-4D40-81A7-84E1969F9FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74838FA-FE84-4D40-81A7-84E1969F9FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC4105B-7AD3-41C2-B040-F3AAC97A26A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC4105B-7AD3-41C2-B040-F3AAC97A26A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC4105B-7AD3-41C2-B040-F3AAC97A26A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC4105B-7AD3-41C2-B040-F3AAC97A26A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEED8364-D194-4D07-9BDF-08EB08056B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEED8364-D194-4D07-9BDF-08EB08056B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEED8364-D194-4D07-9BDF-08EB08056B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEED8364-D194-4D07-9BDF-08EB08056B57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
