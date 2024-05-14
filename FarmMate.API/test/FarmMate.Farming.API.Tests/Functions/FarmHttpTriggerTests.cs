@@ -1,5 +1,6 @@
 using Azure.Core.Serialization;
 using FarmMate.Common.Exceptions;
+using FarmMate.Farming.API.Entities;
 using FarmMate.Farming.API.Functions;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
@@ -59,5 +60,29 @@ public class FarmHttpTriggerTests
 
         // Act & Assert
         await Assert.ThrowsAsync<BadRequestException>(() => FarmHttpTrigger.CreateFarm(request));
+    }
+    
+    [Fact]
+    public async Task UpdateFarm_ReturnsUpdatedFarm_WhenFarmIsValid()
+    {
+        // Arrange
+        var existingFarm = new FakerFarm().Generate(1).First();
+        var farm = new List<Farm> { existingFarm }.AsReadOnly();
+
+        var updatedHospital = new FakerFarm(existingFarm.Id).Generate(1).First();
+        var json = JsonConvert.SerializeObject(updatedHospital);
+        var request = FakeHttpRequestDataExtensions.GetRequestData(json, "post", null, _functionContext);
+
+        // Act
+        var result = await FarmHttpTrigger.UpdateFarm(request, existingFarm.Id, farm);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(existingFarm.Crop, result.Crop);
+        Assert.Equal(existingFarm.Location, result.Location);
+        Assert.Equal(existingFarm.Budget, result.Budget);
+        Assert.NotEqual(existingFarm.Id, result.Id);
+        Assert.Equal(existingFarm.CreatedDateTime, result.CreatedDateTime);
+        Assert.True((DateTime.UtcNow - result.UpdatedDateTime).TotalSeconds < 5);
     }
 }

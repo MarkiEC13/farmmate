@@ -28,9 +28,3 @@ jobs:
           
       - name: Display dotnet version
         run: dotnet --version
-
-      - name: Restore dependencies
-        run: dotnet restore ${{ inputs.source-file-name }}
-
-      - name: Build
-        run: dotnet build ${{ inputs.source-file-name }} --no-restore
