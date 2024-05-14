@@ -9,6 +9,6 @@ jobs:
   build:
     uses: MarkiEC13/FarmMate/.github/workflows/build.yml@main
     with:
-      dotnet-version: 8.0.4
+      dotnet-version: 8.0.300
       source-file-path: src/FarmMate.Farming.API/FarmMate.Farming.API.csproj
       tests-file-path: test/FarmMate.Farming.API.Tests/FarmMate.Farming.API.Tests.csproj
