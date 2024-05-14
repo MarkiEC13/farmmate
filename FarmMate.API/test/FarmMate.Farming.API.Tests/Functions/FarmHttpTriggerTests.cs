@@ -85,4 +85,18 @@ public class FarmHttpTriggerTests
         Assert.Equal(existingFarm.CreatedDateTime, result.CreatedDateTime);
         Assert.True((DateTime.UtcNow - result.UpdatedDateTime).TotalSeconds < 5);
     }
+    
+    [Fact]
+    public async Task UpdateHospital_ThrowsBadRequestException_WhenHospitalIsInvalid()
+    {
+        // Arrange
+        var request = FakeHttpRequestDataExtensions.GetRequestData("{}", "post", null, _functionContext);
+
+        var existingFarm = new FakerFarm().Generate(1).First();
+        var hospitals = new List<Farm> { existingFarm }.AsReadOnly();
+        var id = Guid.NewGuid();
+
+        // Act & Assert
+        await Assert.ThrowsAsync<BadRequestException>(() => FarmHttpTrigger.UpdateFarm(request, id, hospitals));
+    }
 }
